@@ -36,7 +36,7 @@ Where:
   the ghost data JSON file)
 4. Download your images and files from the `contents/images` folder of your ghost installation
 5. Use the `ghost2hexo` command to generate the posts for Hexo
-6. Copy your Ghost images into the your Hexo `sources`
+6. Copy your Ghost images into the your Hexo `sources/contents/images`
 7. Regenerate your static website with `hexo generate`
 
 

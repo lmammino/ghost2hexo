@@ -13,9 +13,9 @@ const usage = () => {
   console.log(
   `
     Usage:
-  
+
         ghost2hexo source dest
-      
+
         source - source data json file from Ghost export
         dest - an existing destination folder
   `);
@@ -48,7 +48,7 @@ const createMap = (collection) => {
   return collection.reduce((map, entry) => {
     map[entry.id] = entry;
     return map;
-  }, {});  
+  }, {});
 };
 
 const data = require(path.resolve(source));
@@ -69,13 +69,13 @@ const postsTagsMap = postsTags.reduce((map, entry) => {
 const createPost = (post, dest, authorsMap) => {
   const destFile = path.join(dest, `${post.slug}.md`);
   const content =
-`layout:           post
-uuid:             ${YAML.stringify(post.uuid)}
+`uuid:             ${YAML.stringify(post.uuid)}
+layout:           post
 title:            ${YAML.stringify(post.title)}
 slug:             ${YAML.stringify(post.slug)}
 subtitle:         ${YAML.stringify(post.meta_description)}
 date:             ${YAML.stringify(post.published_at)}
-update:           ${YAML.stringify(post.updated_at)}
+updated:          ${YAML.stringify(post.updated_at)}
 author:           ${YAML.stringify(authorsMap[post.author_id].name)}
 header-img:       ${YAML.stringify(post.image)}
 status:           ${YAML.stringify(post.status)}
@@ -91,7 +91,7 @@ ${post.markdown}
     if (err) {
       return console.error(err);
     }
-    console.log(` - ${destFile}`);  
+    console.log(` ✔︎ ${destFile}`);
   });
 };
 
