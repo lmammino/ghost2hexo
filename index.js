@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
+const info = require('./package.json');
 const path = require('path');
 const fs = require('fs');
 const YAML = require('yamljs');
@@ -12,6 +13,9 @@ const dest = args[3] || null;
 const usage = () => {
   console.log(
   `
+    ghost2hexo version ${info.version}
+    ${info.description}
+
     Usage:
 
         ghost2hexo source dest
@@ -77,7 +81,8 @@ subtitle:         ${YAML.stringify(post.meta_description)}
 date:             ${YAML.stringify(post.published_at)}
 updated:          ${YAML.stringify(post.updated_at)}
 author:           ${YAML.stringify(authorsMap[post.author_id].name)}
-header-img:       ${YAML.stringify(post.image)}
+author_slug:      ${YAML.stringify(authorsMap[post.author_id].slug)}
+header_img:       ${YAML.stringify(post.image)}
 status:           ${YAML.stringify(post.status)}
 language:         ${YAML.stringify(post.language)}
 meta_title:       ${YAML.stringify(post.meta_title)}
