@@ -18,10 +18,10 @@ const usage = () => {
 
     Usage:
 
-        ghost2hexo source dest
+        ghost2hexo <source> <dest>
 
-        source - source data json file from Ghost export
-        dest - an existing destination folder
+        source  - source data json file from Ghost export
+        dest    - an existing destination folder
   `);
 }
 
@@ -66,7 +66,7 @@ const postsTagsMap = postsTags.reduce((map, entry) => {
   if (!map.hasOwnProperty(entry.post_id)) {
     map[entry.post_id] = [];
   }
-  map[entry.post_id].push(tagsMap[entry.tag_id].name);
+  map[entry.post_id].push(tagsMap[entry.tag_id].slug);
   return map;
 }, {});
 
