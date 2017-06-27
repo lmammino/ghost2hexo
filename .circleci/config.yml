@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:6
+    working_directory: ~/ghost2hexo
+    steps:
+      - checkout
+      - run:
+          name: NPM Setup
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Test
+          command: npm test
+      - run: if [ $CIRCLE_BRANCH = 'master' ]; then npm publish; fi
+      - run: if [ $CIRCLE_BRANCH = 'master' ]; then npm run release:tag; fi

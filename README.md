@@ -5,6 +5,9 @@ A quick'n'dirty command line tool written in Node.js to convert
 [Hexo](https://hexo.io)... Long story short, an helper to migrate from Ghost to
 Hexo (and probably other static website publishing platforms).
 
+[![npm version](https://badge.fury.io/js/ghost2hexo.svg)](https://badge.fury.io/js/ghost2hexo)
+[![CircleCI](https://circleci.com/gh/lmammino/ghost2hexo.svg?style=shield)](https://circleci.com/gh/lmammino/ghost2hexo)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
