@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const info = require('./package.json')
+const info = require('../package.json')
 const path = require('path')
 const fs = require('fs')
 const YAML = require('yamljs')
