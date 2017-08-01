@@ -76,7 +76,8 @@ const createPost = (post, dest, authorsMap) => {
     : path.join(dest, `${post.published_at.substr(0, 10)}_${post.slug}.md`)
 
   const content =
-`uuid:             ${YAML.stringify(post.uuid)}
+`---
+uuid:             ${YAML.stringify(post.uuid)}
 layout:           post
 title:            ${YAML.stringify(post.title)}
 slug:             ${YAML.stringify(post.slug)}
