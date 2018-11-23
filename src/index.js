@@ -73,7 +73,7 @@ const postsTagsMap = postsTags.reduce((map, entry) => {
 const createPost = (post, dest, authorsMap) => {
   const destFile = post.page
     ? path.join(dest, '..', `${post.slug}.md`)
-    : path.join(dest, `${post.published_at.substr(0, 10)}_${post.slug}.md`)
+    : path.join(dest, `${post.published_at.toString().substr(0, 10)}_${post.slug}.md`)
 
   const content =
 `---
