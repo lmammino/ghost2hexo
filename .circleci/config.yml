@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:6
+      - image: node:10
     working_directory: ~/ghost2hexo
     steps:
       - checkout
