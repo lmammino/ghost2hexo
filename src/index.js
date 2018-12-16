@@ -22,7 +22,8 @@ const usage = () => {
 
         source  - source data json file from Ghost export
         dest    - an existing destination folder
-  `)
+  `
+  )
 }
 
 if (!source || !dest) {
@@ -48,7 +49,7 @@ if (!destStat.isDirectory()) {
   process.exit(1)
 }
 
-const createMap = (collection) => {
+const createMap = collection => {
   return collection.reduce((map, entry) => {
     map[entry.id] = entry
     return map
@@ -73,10 +74,12 @@ const postsTagsMap = postsTags.reduce((map, entry) => {
 const createPost = (post, dest, authorsMap) => {
   const destFile = post.page
     ? path.join(dest, '..', `${post.slug}.md`)
-    : path.join(dest, `${post.published_at.toString().substr(0, 10)}_${post.slug}.md`)
+    : path.join(
+      dest,
+      `${post.published_at.toString().substr(0, 10)}_${post.slug}.md`
+    )
 
-  const content =
-`---
+  const content = `---
 uuid:             ${YAML.stringify(post.uuid)}
 layout:           post
 title:            ${YAML.stringify(post.title)}
@@ -91,12 +94,12 @@ status:           ${YAML.stringify(post.status)}
 language:         ${YAML.stringify(post.language)}
 meta_title:       ${YAML.stringify(post.meta_title)}
 meta_description: ${YAML.stringify(post.meta_description)}
-${YAML.stringify({tags: postsTagsMap[post.id]}, 2, 2)}
+${YAML.stringify({ tags: postsTagsMap[post.id] }, 2, 2)}
 ---
 
 ${post.markdown}
 `
-  fs.writeFile(destFile, content, 'utf8', (err) => {
+  fs.writeFile(destFile, content, 'utf8', err => {
     if (err) {
       return console.error(err)
     }
@@ -104,4 +107,4 @@ ${post.markdown}
   })
 }
 
-posts.forEach((post) => createPost(post, absDest, authorsMap))
+posts.forEach(post => createPost(post, absDest, authorsMap))
