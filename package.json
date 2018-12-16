@@ -1,6 +1,6 @@
 {
   "name": "ghost2hexo",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A converter from ghost exported json file to hexo yaml posts",
   "main": "src/index.js",
   "bin": {
@@ -26,14 +26,14 @@
   "author": "Luciano Mammino",
   "license": "MIT",
   "dependencies": {
-    "yamljs": "^0.2.8"
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "eslint": "^4.1.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-node": "^5.1.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint": "^5.10.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
   }
 }
