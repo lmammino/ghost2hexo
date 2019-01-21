@@ -97,7 +97,7 @@ meta_description: ${YAML.stringify(post.meta_description)}
 ${YAML.stringify({ tags: postsTagsMap[post.id] }, 2, 2)}
 ---
 
-${post.markdown}
+${post.markdown ? post.markdown : post.html}
 `
   fs.writeFile(destFile, content, 'utf8', err => {
     if (err) {
