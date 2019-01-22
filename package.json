@@ -1,6 +1,6 @@
 {
   "name": "ghost2hexo",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "A converter from ghost exported json file to hexo yaml posts",
   "main": "src/index.js",
   "bin": {
