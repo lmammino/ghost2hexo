@@ -75,7 +75,7 @@ const createPost = (post, dest, authorsMap) => {
   const destFile = post.page
     ? path.join(dest, '..', `${post.slug}.md`)
     : path.join(
-      dest, 
+      dest,
       `${post.published_at ? post.published_at.substr(0, 10) : '../_drafts/_draft'}_${post.slug}.md`)
 
   const content = `---
